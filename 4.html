@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Toggle Menu</title>
+<style>
+body {margin: 0;  font-family: Arial, sans-serif;  background-color: white; }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 10px 20px;
+}
+.navbar-logo {color: white;  font-size: 20px;   //1.5em;}
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+.nav-links a:hover {color: red; }
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  background-color: white;
+  height: 2px;
+  width: 25px;
+  margin: 1px 0; margin-top: 3px;
+  transition: background-color 0.3s;
+  display: block;
+  border-radius: 1px;
+  cursor: pointer
+
+}
+
+.menu-toggle:hover .bar {
+  background-color: red;
+}
+
+@media screen and (max-width: 2000px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background-color: black;
+    position: absolute;
+    top: 44px;
+    right: 0;
+    width: 100%; //400px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+
+  .nav-links.open {
+    height: 200px;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+</style>
+</head>
+<body>
+  <nav class="navbar"> <div class="navbar-logo">My Logo</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#Test">Test</a></li>
+    </ul>
+  </nav>
+
+<main>
+<section id="home"><center> <h1>Welcome to the Homepage</h1><br>
+<h1>Welcome to the Homepage</h1><br>
+
+<h1>Welcome to the Homepage</h1><br>
+
+<h1>Welcome to the Homepage</h1><br>
+
+</center></section></main>
+
+
+
+<script>
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+</script>
+</body>
+</html>
