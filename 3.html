@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Navbar</title>
+<style>
+/* Reset and Basic Styling */
+body {margin: 0;  padding: 0; font-family: Arial, sans-serif; }
+
+.navbar {
+display: flex;
+align-items: center;
+ justify-content: space-between;
+  background-color: blue; //black;
+  padding: 10px 20px;
+}
+
+.navbar-logo {color: white;  font-size: 20px;   //1.5em;}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li { margin: 0 10px;}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {color: red;}
+
+/* Responsive Design */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+
+//  font-size: 22px; // 1.5em;
+//  color: white;
+//  background: none;
+//  border: none;
+ // cursor: pointer;
+}
+
+.navbar-toggle span {
+  background-color: #fff;
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  margin-top: 3px;
+  cursor: pointer
+}
+
+
+@media screen and (max-width: 1000px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    background-color:  blue; //black;
+    position: absolute;
+    top: 44px;  //60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-links.show {
+    display: flex;
+  }
+
+  .navbar-links li {
+    margin: 10px 0;
+  }
+
+  .navbar-toggle {display: flex; //block; }}
+
+</style>
+</head><body>
+<nav class="navbar">
+    <div class="navbar-logo">My Logo</div>
+    <ul class="navbar-links">
+      <li><a href="">Home</a></li>
+        <li><a href="">Logo</a></li>
+      <li><a href="">About</a></li>
+      <li><a href="">Services</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+
+<!--  <button class="navbar-toggle" id="navbarToggle">☰</button> -->
+
+ <div class="navbar-toggle" id="navbarToggle">
+                 <span></span> 
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+  </nav>
+
+<main>
+<section id="home"><center> <h1>Welcome to the Homepage</h1><br>
+<h1>Welcome to the Homepage</h1><br>
+<h1>Welcome to the Homepage</h1><br>
+<h1>Welcome to the Homepage</h1><br>
+</center></section></main>
+
+<script>
+const navbarToggle = document.getElementById('navbarToggle');
+const navbarLinks = document.querySelector('.navbar-links');
+navbarToggle.addEventListener('click', () => {navbarLinks.classList.toggle('show'); });
+</script>
+</body>
+</html>
