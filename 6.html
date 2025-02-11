@@ -1,0 +1,109 @@
+<!-- https://chatgpt.com/c/67a87aa3-b570-800e-9d13-88a9af48ae48 -->
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Mobile Menu</title>
+<style>
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Toggle Button */
+.toggle-btn {
+    background: red;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    padding: 5px 15px; 
+    cursor: pointer;
+    display: none;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: red;
+    border-radius: 5px;
+}
+
+/* Responsive Menu  768px*/
+@media (max-width: 8000px) {
+    .toggle-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: black;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+}
+</style>
+</head><body>
+<nav class="navbar">
+        <div class="logo">MyLogo</div>
+        <button class="toggle-btn" onclick="toggleMenu()">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+<script>
+function toggleMenu() {
+const navLinks = document.getElementById("navLinks");
+navLinks.classList.toggle("show");
+}
+</script>
+<br/><center><h1>
+Create a Mobile Toggle Navigation Menu using HTML, CSS and JavaScript responsive color black red white  </h1></center>
+</body></html>
